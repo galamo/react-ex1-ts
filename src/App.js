@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Button, Dropdown } from "carbon-components-react";
+import "./App.css";
+import AppHeader from "./components/header/header";
+import "carbon-components/scss/globals/scss/styles.scss";
+
+const items = [
+  {
+    id: "prod1",
+    text: "prod1"
+  },
+  {
+    id: "prod2",
+    text: "prod2"
+  },
+  {
+    id: "prod-3",
+    text: "prod 3"
+  },
+  {
+    id: "prod-4",
+    text: "prod 4"
+  }
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppHeader />
+      <Button> Run </Button>
+      <Dropdown items={items} itemToString={item => (item ? item.text : "")} />
     </div>
   );
 }
